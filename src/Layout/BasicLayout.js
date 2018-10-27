@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link, Route, Redirect, Switch } from 'dva/router'
-import { Layout, Menu, Icon } from 'antd';
-import Home from './Home';
+
 import { isAbsolute } from 'path';
+
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import styles from './BasicLayout.css'
+import Home from './Home'
 import List from '../routes/List';
 import RegistrationForm from '../routes/Add';
-import PieChart from '../routes/Statistics';
 import courseware from '../routes/courseware';
 
-
-const { Header, Content, Footer } = Layout;
+const MenuItemGroup = Menu.ItemGroup;
+const { SubMenu } = Menu;
+const { Header, Content, Sider, Footer } = Layout;
 
 class BasicLayout extends React.Component {
   // state = {
@@ -23,81 +26,182 @@ class BasicLayout extends React.Component {
   //   });
   // }
 
-
   render() {
     return (
-      <Layout style={{padding: 0, margin: 0}}>
-        <Header style={{ backgroundColor: 'white', position: isAbsolute, zIndex: 1, width: '100%' }}>
-          <Menu
-            //theme="dark"
+      <Layout style={{padding: 0, margin: 0}} >
+        <Header className={styles.header}>
+          <div className={styles.logo} />
+          {/* <Menu
+            theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['Home']}
+            defaultSelectedKeys={['2']}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="Home">
-              <Link to="/Layout/Home">
-                <Icon type="home" />
-                首页
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="List">
-              <Link to="/Layout/List">
-                <Icon type="profile" />
-                学籍列表和查询
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="Add">
-              <Link to="/Layout/Add">
-                <Icon type="form" />
-                增加学籍
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="Statistics">
-              <Link to="/Layout/Statistics">
-                <Icon type="pie-chart" />
-                学籍统计
-              </Link>  
-            </Menu.Item>
-            <Menu.Item key="courseware">
-              <Link to="/Layout/courseware">
-                <Icon type="profile" />
-                教学课件
-              </Link>  
-            </Menu.Item>
-          </Menu>
+            <Menu.Item key="1">nav 1</Menu.Item>
+            <Menu.Item key="2">nav 2</Menu.Item>
+            <Menu.Item key="3">nav 3</Menu.Item>
+          </Menu> */}
         </Header>
-        <Content style={{minHeight: 720, margin: 20}}>
-          <Switch>
-            <Route exact path="/Layout/Home" component={Home} />
-            <Route exact path="/Layout/List" component={List} />
-            <Route exact path="/Layout/Add" component={RegistrationForm} />
-            <Route exact path="/Layout/Statistics" component={PieChart} />
-            <Route exact path="/Layout/courseware" component={courseware} />
-            <Redirect from="*" to='/Layout/Home' />
-          </Switch>
-        </Content>
-        <Footer style={{textAlign: "center"}}>
-          student-status ©2018 Created by CuteAndroid
+        <Layout>
+          <Sider width={200} style={{ background: '#fff', position: 'fixed', height: '100%' }}>
+            <Menu
+              mode="inline"
+              defaultSelectedKeys={['1']}
+              defaultOpenKeys={['sub1']}
+              style={{ height: '100%', borderRight: 0 }}
+            >
+              <SubMenu key="sub1" title={<span><Icon type="user" />教学课件</span>}>
+                <Menu.Item key="1">
+                  <Link to="/Layout/Home">
+                    option1
+                   </Link>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <Link to="/Layout/Courseware">
+                    课件
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="3">option3</Menu.Item>
+                <Menu.Item key="4">option4</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub2" title={<span><Icon type="laptop" />教学视频</span>}>
+                <Menu.Item key="5">
+                  <Link to="/Layout/Home">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="6">option6</Menu.Item>
+                <Menu.Item key="7">option7</Menu.Item>
+                <Menu.Item key="8">option8</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub3" title={<span><Icon type="notification" />网页资料</span>}>
+                <Menu.Item key="9">
+                  <Link to="/Layout/Home">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="10">option10</Menu.Item>
+                <Menu.Item key="11">option11</Menu.Item>
+                <Menu.Item key="12">option12</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub4" title={<span><Icon type="notification" />常用代码</span>}>
+                <Menu.Item key="13">
+                  <Link to="/Layout/Add">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="14">option10</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub5" title={<span><Icon type="notification" />参考文献</span>}>
+                <Menu.Item key="15">
+                  <Link to="/Layout/Home">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="16">option10</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub6" title={<span><Icon type="notification" />常用数据</span>}>
+                <Menu.Item key="19">
+                  <Link to="/Layout/Home">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="20">option10</Menu.Item>
+              </SubMenu>
+              <SubMenu key="sub7" title={<span><Icon type="notification" />相关网络</span>}>
+                <Menu.Item key="21">
+                  <Link to="/Layout/Home">
+                    option1
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="22">option12</Menu.Item>
+              </SubMenu>
+            </Menu>
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px' }}>
+            <Breadcrumb style={{ margin: '8px 0' }}>
+              {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item> */}
+            </Breadcrumb>
+            <Content style={{ background: '#fff', minHeight: 600}}>
+              <Switch>
+                <Route exact path="/Layout/Home" component={Home} />
+                <Route exact path="/Layout/List" component={List} />
+                <Route exact path="/Layout/Add" component={RegistrationForm} />
+                <Route exact path="/Layout/Courseware" component={courseware} />
+                {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
+                <Redirect from="*" to='/Layout/Home' />
+              </Switch>
+            </Content>
+          </Layout>
+        </Layout>
+        <Footer style={{textAlign: "center", position: isAbsolute }}>
+          ML-material ©2018 Created by 安卓阳 && 陈晓雪
         </Footer>
       </Layout>
-  )
+    )
   };
 }
-//
-// const Home = () => (
-//   <div>
-//     <h2>Home</h2>
-//   </div>
-// );
-//
-// const Page1 = () => (
-//   <div>
-//     <h2>Page</h2>
-//   </div>
-// );
+  
+  //   return (
+  //     <Layout style={{padding: 0, margin: 0}}>
+  //       <Header style={{ backgroundColor: 'white', position: isAbsolute, zIndex: 1, width: '100%' }}>
+  //         <Menu
+  //           //theme="dark"
+  //           mode="horizontal"
+  //           defaultSelectedKeys={['Home']}
+  //           style={{ lineHeight: '64px' }}
+  //         >
+  //           <Menu.Item key="Home">
+  //             <Link to="/Layout/Home">
+  //               <Icon type="home" />
+  //               首页
+  //             </Link>
+  //           </Menu.Item>
+  //           <Menu.Item key="List">
+  //             <Link to="/Layout/List">
+  //               <Icon type="profile" />
+  //               学籍列表和查询
+  //             </Link>
+  //           </Menu.Item>
+  //           <Menu.Item key="Add">
+  //             <Link to="/Layout/Add">
+  //               <Icon type="form" />
+  //               增加学籍
+  //             </Link>
+  //           </Menu.Item>
+  //           <SubMenu title={<span><Icon type="pie-chart" />学籍统计</span>}>
+  //             <MenuItemGroup>
+  //               <Menu.Item key="setting:1">
+  //                 <Link to="/Layout/Statistics">
+  //                   年龄统计饼图
+  //                 </Link> 
+  //               </Menu.Item>
+  //               <Menu.Item key="setting:2">
+  //                 <Link to="/Layout/Bar">
+  //                   柱状图
+  //                 </Link> 
+  //               </Menu.Item>
+  //               <Menu.Item key="setting:3">
+  //                 年级人数折线图
+  //               </Menu.Item>
+  //               {/* <Menu.Item key="setting:4">
+  //                 Option 4
+  //               </Menu.Item> */}
+  //             </MenuItemGroup>
+  //           </SubMenu>
+  //         </Menu>
+  //       </Header>
+  //       <Content style={{minHeight: 600, margin: 20}}>
+          
+  //       </Content>
+  //       <Footer style={{textAlign: "center", position: isAbsolute }}>
+  //         ML-material ©2018 Created by Anzhuoyang&Chenxiaoxue
+  //       </Footer>
+  //     </Layout>
+  // )
+
 
 
 export default BasicLayout;
-/**
- * Created by cuteandroid on 2018/8/14.
- */
