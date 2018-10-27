@@ -6,6 +6,7 @@ import { isAbsolute } from 'path';
 import List from '../routes/List';
 import RegistrationForm from '../routes/Add';
 import PieChart from '../routes/Statistics';
+import courseware from '../routes/courseware';
 
 
 const { Header, Content, Footer } = Layout;
@@ -57,6 +58,12 @@ class BasicLayout extends React.Component {
                 学籍统计
               </Link>  
             </Menu.Item>
+            <Menu.Item key="courseware">
+              <Link to="/Layout/courseware">
+                <Icon type="profile" />
+                教学课件
+              </Link>  
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{minHeight: 720, margin: 20}}>
@@ -65,6 +72,7 @@ class BasicLayout extends React.Component {
             <Route exact path="/Layout/List" component={List} />
             <Route exact path="/Layout/Add" component={RegistrationForm} />
             <Route exact path="/Layout/Statistics" component={PieChart} />
+            <Route exact path="/Layout/courseware" component={courseware} />
             <Redirect from="*" to='/Layout/Home' />
           </Switch>
         </Content>
