@@ -43,7 +43,7 @@ class BasicLayout extends React.Component {
           </Menu> */}
         </Header>
         <Layout>
-          <Sider width={200} style={{ background: '#fff', position: 'fixed', height: '100%' }}>
+          <Sider width={200} style={{ background: '#fff', }}>
             <Menu
               mode="inline"
               defaultSelectedKeys={['1']}
@@ -57,9 +57,9 @@ class BasicLayout extends React.Component {
                    </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                  {/* <Link to="/Layout/Courseware">
+                  <Link to="/Layout/Courseware">
                     课件
-                  </Link> */}
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="3">option3</Menu.Item>
                 <Menu.Item key="4">option4</Menu.Item>
@@ -118,23 +118,16 @@ class BasicLayout extends React.Component {
               </SubMenu>
             </Menu>
           </Sider>
-          <Layout style={{ padding: '0 24px 24px' }}>
-            <Breadcrumb style={{ margin: '8px 0' }}>
-              {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item> */}
-            </Breadcrumb>
-            <Content style={{ background: '#fff', minHeight: 600}}>
-              <Switch>
-                <Route exact path="/Layout/Home" component={Home} />
-                <Route exact path="/Layout/List" component={List} />
-                <Route exact path="/Layout/Add" component={RegistrationForm} />
-                {/* <Route exact path="/Layout/Courseware" component={courseware} /> */}
-                {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
-                <Redirect from="*" to='/Layout/Home' />
-              </Switch>
-            </Content>
-          </Layout>
+          <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 650 }} >
+            <Switch>
+              <Route exact path="/Layout/Home" component={Home} />
+              <Route exact path="/Layout/List" component={List} />
+              <Route exact path="/Layout/Add" component={RegistrationForm} />
+              <Route exact path="/Layout/Courseware" component={courseware} />
+              {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
+              <Redirect from="*" to='/Layout/Home' />
+            </Switch>
+          </Content>
         </Layout>
         <Footer style={{textAlign: "center", position: isAbsolute }}>
           ML-material ©2018 Created by 安卓阳 && 陈晓雪

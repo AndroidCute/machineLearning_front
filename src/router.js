@@ -15,7 +15,7 @@ function RouterConfig({ history }) {
         <Route path="/Login" component={Login} />
         {/* <Route path="/" exact component={IndexPage} /> */}
         {/* <Route path="/products" component={Products} /> */}
-        <Route exact path="/Layout" component={BasicLayout} />
+        <Route path="/Layout" component={BasicLayout} />
         <Route path="/Layout/Courseware" component={courseware} />
         <Redirect from="*" to="/Login" />
       </Switch>
