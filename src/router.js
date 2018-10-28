@@ -4,6 +4,7 @@ import { Router, Redirect, Route, Switch } from 'dva/router';
 // import Products from './routes/Products';
 import BasicLayout from './Layout/BasicLayout';
 import Login from './routes/Login';
+import courseware from './routes/courseware'
 // import RegistrationForm from './routes/Add';
 
 
@@ -14,8 +15,8 @@ function RouterConfig({ history }) {
         <Route path="/Login" component={Login} />
         {/* <Route path="/" exact component={IndexPage} /> */}
         {/* <Route path="/products" component={Products} /> */}
-        <Route path="/Layout" component={BasicLayout} />
-        {/* <Route path="/Add" component={RegistrationForm} /> */}
+        <Route exact path="/Layout" component={BasicLayout} />
+        <Route path="/Layout/Courseware" component={courseware} />
         <Redirect from="*" to="/Login" />
       </Switch>
     </Router>

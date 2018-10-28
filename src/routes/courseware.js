@@ -29,14 +29,11 @@ class courseware extends React.Component{
           ];
           
         return(
-            <Layout>
-            <Header style={{ backgroundColor: 'white', position: isAbsolute, zIndex: 1, width: '100%' }}>
-            <Button type="primary">
+          <div>
+             <Button type="primary">
             <Icon type="left" />
             </Button>
-            </Header>
 
-            <Content>
             <List
               itemLayout="horizontal"
               dataSource={data}
@@ -49,11 +46,9 @@ class courseware extends React.Component{
               </List.Item>
                   )}
             />
-            </Content>
-            <Footer>
-              <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={this.onChange} />  
-            </Footer>
-            </Layout>
+             <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={this.onChange} /> 
+          </div>
+         
         );
     }
 }

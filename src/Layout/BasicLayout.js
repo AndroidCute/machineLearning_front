@@ -57,9 +57,9 @@ class BasicLayout extends React.Component {
                    </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link to="/Layout/Courseware">
+                  {/* <Link to="/Layout/Courseware">
                     课件
-                  </Link>
+                  </Link> */}
                 </Menu.Item>
                 <Menu.Item key="3">option3</Menu.Item>
                 <Menu.Item key="4">option4</Menu.Item>
@@ -129,7 +129,7 @@ class BasicLayout extends React.Component {
                 <Route exact path="/Layout/Home" component={Home} />
                 <Route exact path="/Layout/List" component={List} />
                 <Route exact path="/Layout/Add" component={RegistrationForm} />
-                <Route exact path="/Layout/Courseware" component={courseware} />
+                {/* <Route exact path="/Layout/Courseware" component={courseware} /> */}
                 {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
                 <Redirect from="*" to='/Layout/Home' />
               </Switch>
