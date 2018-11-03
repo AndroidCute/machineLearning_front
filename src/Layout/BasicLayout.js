@@ -9,6 +9,9 @@ import Home from './Home'
 import List from '../routes/List';
 import RegistrationForm from '../routes/Add';
 import courseware from '../routes/courseware';
+import References from '../routes/References';
+import Codeexample from '../routes/Codeexample';
+import Code from '../routes/Code';
 
 const MenuItemGroup = Menu.ItemGroup;
 const { SubMenu } = Menu;
@@ -47,75 +50,54 @@ class BasicLayout extends React.Component {
             <Menu
               mode="inline"
               defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
               style={{ height: '100%', borderRight: 0 }}
             >
-              <SubMenu key="sub1" title={<span><Icon type="user" />教学课件</span>}>
-                <Menu.Item key="1">
-                  <Link to="/Layout/Home">
-                    option1
-                   </Link>
-                </Menu.Item>
-                <Menu.Item key="2">
-                  <Link to="/Layout/Courseware">
-                    课件
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="3">option3</Menu.Item>
-                <Menu.Item key="4">option4</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" title={<span><Icon type="laptop" />教学视频</span>}>
-                <Menu.Item key="5">
-                  <Link to="/Layout/Home">
-                    option1
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="6">option6</Menu.Item>
-                <Menu.Item key="7">option7</Menu.Item>
-                <Menu.Item key="8">option8</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub3" title={<span><Icon type="notification" />网页资料</span>}>
-                <Menu.Item key="9">
-                  <Link to="/Layout/Home">
-                    option1
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="10">option10</Menu.Item>
-                <Menu.Item key="11">option11</Menu.Item>
-                <Menu.Item key="12">option12</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub4" title={<span><Icon type="notification" />常用代码</span>}>
-                <Menu.Item key="13">
-                  <Link to="/Layout/Add">
-                    option1
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="14">option10</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub5" title={<span><Icon type="notification" />参考文献</span>}>
-                <Menu.Item key="15">
-                  <Link to="/Layout/Home">
-                    option1
+              <Menu.Item key="course">
+                <Link to="/Layout/Courseware">
+                  <Icon type="file-ppt" />
+                  教学课件
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="video">
+                <Link to="/Layout/Home">
+                  <Icon type="video-camera" theme="outlined" />
+                  学习视频
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="html">
+                <Link to="/Layout/Home">
+                  <Icon type="file" theme="outlined" />
+                  网页资料
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="code">
+                <Link to="/Layout/Codeexample">
+                <Icon type="edit" theme="outlined" />
+                  代码示例
+                </Link>
+              </Menu.Item>
+              <SubMenu key="sub5" title={<span><Icon type="read" theme="outlined" />参考文献</span>}>
+                <Menu.Item key="reference">
+                  <Link to="/Layout/Reference">
+                    文献
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="16">option10</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub6" title={<span><Icon type="notification" />常用数据</span>}>
-                <Menu.Item key="19">
+              <SubMenu key="sub6" title={<span><Icon type="profile" theme="outlined" />常用数据</span>}>
+                <Menu.Item key="handW">
                   <Link to="/Layout/Home">
-                    option1
+                    手写体数字识别
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="20">option10</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub7" title={<span><Icon type="notification" />相关网络</span>}>
-                <Menu.Item key="21">
+                <Menu.Item key="net">
                   <Link to="/Layout/Home">
-                    option1
+                  <Icon type="link" theme="outlined" />
+                    相关网络
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="22">option12</Menu.Item>
-              </SubMenu>
             </Menu>
           </Sider>
           <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 650 }} >
@@ -124,6 +106,10 @@ class BasicLayout extends React.Component {
               <Route exact path="/Layout/List" component={List} />
               <Route exact path="/Layout/Add" component={RegistrationForm} />
               <Route exact path="/Layout/Courseware" component={courseware} />
+              <Route exact path="/Layout/Reference" component={References} />
+              <Route exact path="/Layout/Codeexample" component={Codeexample} />
+              <Route exact path="/Layout/Code" component={Code} />
+
               {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
               <Redirect from="*" to='/Layout/Home' />
             </Switch>
