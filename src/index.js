@@ -18,6 +18,7 @@ const app = dva({
 app.model(require('./models/products').default);
 app.model(require('./models/login').default);
 app.model(require('./models/student').default);
+app.model(require('./models/files').default);
 // app.model(require('./models/example').default);
 
 // 4. Router

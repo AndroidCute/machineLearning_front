@@ -12,6 +12,11 @@ import courseware from '../routes/courseware';
 import References from '../routes/References';
 import Codeexample from '../routes/Codeexample';
 import Code from '../routes/Code';
+import Upload from '../routes/upload';
+import Data from '../routes/data';
+import movie from '../routes/movie';
+import Netfile from '../routes/netfile';
+
 
 const MenuItemGroup = Menu.ItemGroup;
 const { SubMenu } = Menu;
@@ -59,13 +64,13 @@ class BasicLayout extends React.Component {
                 </Link>
               </Menu.Item>
               <Menu.Item key="video">
-                <Link to="/Layout/Home">
+                <Link to="/Layout/Movie">
                   <Icon type="video-camera" theme="outlined" />
                   学习视频
                 </Link>
               </Menu.Item>
               <Menu.Item key="html">
-                <Link to="/Layout/Home">
+                <Link to="/Layout/Netfile">
                   <Icon type="file" theme="outlined" />
                   网页资料
                 </Link>
@@ -86,7 +91,7 @@ class BasicLayout extends React.Component {
               </SubMenu>
               <SubMenu key="sub6" title={<span><Icon type="profile" theme="outlined" />常用数据</span>}>
                 <Menu.Item key="handW">
-                  <Link to="/Layout/Home">
+                  <Link to="/Layout/Data">
                     手写体数字识别
                   </Link>
                 </Menu.Item>
@@ -98,6 +103,12 @@ class BasicLayout extends React.Component {
                     相关网络
                   </Link>
                 </Menu.Item>
+                <Menu.Item key="upload">
+                <Link to="/Layout/Upload">
+                <Icon type="edit" theme="outlined" />
+                  上传
+                </Link>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 650 }} >
@@ -108,7 +119,11 @@ class BasicLayout extends React.Component {
               <Route exact path="/Layout/Courseware" component={courseware} />
               <Route exact path="/Layout/Reference" component={References} />
               <Route exact path="/Layout/Codeexample" component={Codeexample} />
-              <Route exact path="/Layout/Code" component={Code} />
+              <Route exact path="/Layout/Upload" component={Upload} />
+              <Route exact path="/Layout/Movie" component={movie} />
+              <Route exact path="/Layout/Netfile" component={Netfile} />
+              <Route exact path="/Layout/Data" component={Data} />
+              <Route exact path="/Layout/Code/:id" component={Code} />
 
               {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
               <Redirect from="*" to='/Layout/Home' />
