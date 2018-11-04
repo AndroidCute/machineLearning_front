@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IconText, Button, Avatar ,List,Icon,} from 'antd';
 import { Pagination } from 'antd';
@@ -49,6 +48,7 @@ class References extends React.Component{
             content: '书名：人工神经网络教程；作者：韩力群；定价：36.00元；出版社：北京邮电学院出版社；出版时间：2006年12月1日；ISBN:9787563513673；页数：330。',
             extra:<img width={129} height={182} src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=2bab94faa70f4bfb8cd099523b741fcd/2fdda3cc7cd98d10a840f754223fb80e7bec903b.jpg" />,
         });
+         
           
         return(
             <div >   
