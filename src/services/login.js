@@ -52,3 +52,12 @@ export async function DeleteStudent(params) {
 export async function StatisticsStudent() {
   return request('/student/pieAgeCount');
 }
+
+export async function Searchfiles(params) {
+  return request('/files', {
+    method: 'POST',
+    body: {
+      ...params,
+    },
+  });
+}

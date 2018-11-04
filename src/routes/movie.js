@@ -8,9 +8,9 @@ import styles from './courseware.css';
 import files from '../models/files';
 import { connect } from 'dva';
 
-class courseware extends React.Component{
+class movie extends React.Component{
   UNSAFE_componentWillMount() {
-    this.props.dispatch({type: "files/getSearchList", payload:{ file_type: 'ppt' }});
+    this.props.dispatch({type: "files/getSearchList", payload:{ file_type: 'pdf' }});
   }
 
   onChange = (pageNumber) => {
@@ -21,8 +21,6 @@ class courseware extends React.Component{
     console.log(e);
   }
   
-  
-
   render(){
     const { list } = this.props.files; 
     
@@ -30,7 +28,7 @@ class courseware extends React.Component{
         <div >   
         <List
           className={styles.list}
-          header={<h2>机器学习课程课件</h2>}
+          header={<h2>机器学习视频</h2>}
           dataSource={list}
           renderItem={item => (
           <List.Item  > 
@@ -53,4 +51,4 @@ class courseware extends React.Component{
   }
 }
 
-export default connect((files)=>(files))(courseware);
+export default connect((files)=>(files))(movie);

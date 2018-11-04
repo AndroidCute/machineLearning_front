@@ -20,11 +20,11 @@ class Code extends React.Component {
               这里是代码
               <pre>
                 <code></code>
-                "fd 
+                fd 
                  stopPropagation();
                  fdh j
                  g
-                 dfh"
+                 dfh
               </pre>
             </div>
           </Content>
