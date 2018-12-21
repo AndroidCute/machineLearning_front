@@ -1,7 +1,12 @@
-.logo {
+/* .logo {
   width: 120px;
-  height: 31px;
+  height: 50px;
   background: rgba(255,255,255,.2);  
   margin: 16px 28px 16px 0;
   float: left;
+} */
+
+.header {
+  /* background-image: -moz-linear-gradient(url(../assets/background.jpg)); */
+  background-image: url(../assets/MLbackground.jpg) ;
 }

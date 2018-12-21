@@ -3,14 +3,14 @@ import React from 'react';
 import { Layout, Button, Avatar ,List,Icon,} from 'antd';
 import { Pagination } from 'antd';
 import { isAbsolute } from 'path';
-import avaterppt from '../assets/ppt.jpg';
+import avaterppt from '../assets/video.jpg';
 import styles from './courseware.css';
 import files from '../models/files';
 import { connect } from 'dva';
 
 class movie extends React.Component{
   UNSAFE_componentWillMount() {
-    this.props.dispatch({type: "files/getSearchList", payload:{ file_type: 'pdf' }});
+    this.props.dispatch({type: "files/getSearchList", payload:{ file_type: 'movie' }});
   }
 
   onChange = (pageNumber) => {

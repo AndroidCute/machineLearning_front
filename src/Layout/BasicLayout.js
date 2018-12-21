@@ -81,26 +81,25 @@ class BasicLayout extends React.Component {
                   代码示例
                 </Link>
               </Menu.Item>
-              <SubMenu key="sub5" title={<span><Icon type="read" theme="outlined" />参考文献</span>}>
-                <Menu.Item key="reference">
-                  <Link to="/Layout/Reference">
-                    文献
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="16">option10</Menu.Item>
-              </SubMenu>
+              <Menu.Item key="reference">
+                <Link to="/Layout/Reference">
+                <Icon type="read" theme="outlined" />
+                  参考书籍
+                </Link>
+              </Menu.Item>
               <SubMenu key="sub6" title={<span><Icon type="profile" theme="outlined" />常用数据</span>}>
                 <Menu.Item key="handW">
                   <Link to="/Layout/Data">
                     手写体数字识别
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="20">option10</Menu.Item>
+                <Menu.Item key="20">ORL人脸库</Menu.Item>
+                
               </SubMenu>
                 <Menu.Item key="net">
                   <Link to="/Layout/Home">
                   <Icon type="link" theme="outlined" />
-                    相关网络
+                    相关网址
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="upload">

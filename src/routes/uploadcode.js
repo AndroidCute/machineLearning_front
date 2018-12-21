@@ -3,7 +3,7 @@ import { message, Icon, Upload } from 'antd';
 
 const Dragger = Upload.Dragger;
 
-class upload extends React.Component{
+class UploadCode extends React.Component{
 
   onChange = (info) => {
     const status = info.file.status;
@@ -39,4 +39,4 @@ class upload extends React.Component{
   }
 }
 
-export default upload;
+export default UploadCode;

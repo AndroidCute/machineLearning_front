@@ -6,10 +6,14 @@ import { Pagination } from 'antd';
 import { isAbsolute } from 'path';
 import avaterppt from '../assets/ppt.jpg';
 import styles from './courseware.css';
-
+import { connect } from 'dva';
 
 
 class Codeexample extends React.Component{
+
+  UNSAFE_componentWillMount() {
+    this.props.dispatch({type: "files/getSearchList", payload:{ file_type: 'word' }});
+  }
 
     onChange = (pageNumber) => {
       console.log('Page: ', pageNumber);
@@ -22,34 +26,21 @@ class Codeexample extends React.Component{
     
 
     render(){
-      const data = [
-          {
-            title: '这是题目',
-          },
-          {
-            title: '这里也是题目',
-          },
-          {
-            title: '又是一个题目',
-          },
-          {
-            title: '还是题目',
-          },
-        ];
+      const { list } = this.props.files; 
    
       return(
         <div >   
           <List
             className={styles.list}
             // header={<h2>机器学习课程课件</h2>}
-            dataSource={data}
+            dataSource={list}
             renderItem={item => (
             <List.Item  > 
               {/* actions={[<a>下载</a>]} */}
               <List.Item.Meta
                 avatar={<Avatar size="large" shape="square" icon="code" theme="filled" />}
                 // avatar={<Avatar size="large" icon="file-ppt" />}
-                title={<Link to="/Layout/Code">{item.title}</Link>}
+                title={<Link to={`/Layout/Code/${item.id}`}>{item.name}</Link>}
                 description="这里是描述"
               />
             </List.Item>
@@ -64,4 +55,5 @@ class Codeexample extends React.Component{
     }
 }
 
-export default Codeexample;
+export default connect((files)=>(files))(Codeexample);
+

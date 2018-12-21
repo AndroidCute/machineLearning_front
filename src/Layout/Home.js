@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className={styles.normal}>
-        <h1 className={styles.title}>Welcome to student-status!</h1>
+        <h1 className={styles.title}>Welcome!</h1>
         <div className={styles.welcome} />
       </div>
     );
