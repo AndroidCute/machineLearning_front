@@ -17,7 +17,7 @@ function RouterConfig({ history }) {
         {/* <Route path="/products" component={Products} /> */}
         <Route path="/Layout" component={BasicLayout} />
         
-        <Redirect from="*" to="/Login" />
+        <Redirect from="*" to="/Layout" />
       </Switch>
     </Router>
   );

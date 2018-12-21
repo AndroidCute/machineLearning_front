@@ -94,7 +94,6 @@ class BasicLayout extends React.Component {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="20">ORL人脸库</Menu.Item>
-                
               </SubMenu>
                 <Menu.Item key="net">
                   <Link to="/Layout/Home">
@@ -113,8 +112,6 @@ class BasicLayout extends React.Component {
           <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 650 }} >
             <Switch>
               <Route exact path="/Layout/Home" component={Home} />
-              <Route exact path="/Layout/List" component={List} />
-              <Route exact path="/Layout/Add" component={RegistrationForm} />
               <Route exact path="/Layout/Courseware" component={courseware} />
               <Route exact path="/Layout/Reference" component={References} />
               <Route exact path="/Layout/Codeexample" component={Codeexample} />
