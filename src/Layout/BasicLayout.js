@@ -16,7 +16,7 @@ import Upload from '../routes/upload';
 import Data from '../routes/data';
 import movie from '../routes/movie';
 import Netfile from '../routes/netfile';
-
+import HtmlPage from '../routes/HtmlPage';
 
 const MenuItemGroup = Menu.ItemGroup;
 const { SubMenu } = Menu;
@@ -96,7 +96,7 @@ class BasicLayout extends React.Component {
                 <Menu.Item key="20">ORL人脸库</Menu.Item>
               </SubMenu>
                 <Menu.Item key="net">
-                  <Link to="/Layout/Home">
+                  <Link to="/Layout/HtmlPage">
                   <Icon type="link" theme="outlined" />
                     相关网址
                   </Link>
@@ -120,6 +120,7 @@ class BasicLayout extends React.Component {
               <Route exact path="/Layout/Netfile" component={Netfile} />
               <Route exact path="/Layout/Data" component={Data} />
               <Route exact path="/Layout/Code/:id" component={Code} />
+              <Route exact path="/Layout/HtmlPage" component={HtmlPage}  />
 
               {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
               <Redirect from="*" to='/Layout/Home' />
