@@ -17,6 +17,8 @@ import Data from '../routes/data';
 import movie from '../routes/movie';
 import Netfile from '../routes/netfile';
 import HtmlPage from '../routes/HtmlPage';
+import PDFfile from '../routes/PDFfile';
+import Datanew from '../routes/Data_new';
 
 const MenuItemGroup = Menu.ItemGroup;
 const { SubMenu } = Menu;
@@ -75,10 +77,16 @@ class BasicLayout extends React.Component {
                   网页资料
                 </Link>
               </Menu.Item>
+              <Menu.Item key="pdf">
+                <Link to="/Layout/PDFfile">
+                  <Icon type="file-pdf" />
+                  文档资料
+                </Link>
+              </Menu.Item>
               <Menu.Item key="code">
                 <Link to="/Layout/Codeexample">
-                <Icon type="edit" theme="outlined" />
-                  代码示例
+                  <Icon type="download" />
+                  代码下载
                 </Link>
               </Menu.Item>
               <Menu.Item key="reference">
@@ -87,21 +95,19 @@ class BasicLayout extends React.Component {
                   参考书籍
                 </Link>
               </Menu.Item>
-              <SubMenu key="sub6" title={<span><Icon type="profile" theme="outlined" />常用数据</span>}>
-                <Menu.Item key="handW">
-                  <Link to="/Layout/Data">
-                    手写体数字识别
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="20">ORL人脸库</Menu.Item>
-              </SubMenu>
-                <Menu.Item key="net">
-                  <Link to="/Layout/HtmlPage">
-                  <Icon type="link" theme="outlined" />
-                    相关网址
-                  </Link>
-                </Menu.Item>
-                <Menu.Item key="upload">
+              <Menu.Item key="handW">
+                <Link to="/Layout/Datanew">
+                <Icon type="profile" theme="outlined" />
+                  常用数据
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="net">
+                <Link to="/Layout/HtmlPage">
+                <Icon type="link" theme="outlined" />
+                  相关网址
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="upload">
                 <Link to="/Layout/Upload">
                 <Icon type="edit" theme="outlined" />
                   上传
@@ -121,6 +127,8 @@ class BasicLayout extends React.Component {
               <Route exact path="/Layout/Data" component={Data} />
               <Route exact path="/Layout/Code/:id" component={Code} />
               <Route exact path="/Layout/HtmlPage" component={HtmlPage}  />
+              <Route exact path="/Layout/PDFfile" component={PDFfile} />
+              <Route exact path="/Layout/Datanew" component={Datanew} />
 
               {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
               <Redirect from="*" to='/Layout/Home' />

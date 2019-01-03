@@ -27,8 +27,8 @@ render(){
     listData.push({
         //href: 'http://ant.design',
         title:  ' 点击下载项目代码压缩包 ',
-        description: '《人工神经网络原理》介绍了人工神经网络的基本理论，系统地阐述了六种典型的人工神经网络模型，即早期的感知机神经网络、自适应线性元件神经网络、误差反向传播神经网络、Hopfield神经网络、B0ltzmann机和自适应共振理论神经网络，以及它们的网络结构、学习算法、工作原理及应用实例，为读者深入了解和研究人工神经网络奠定了基础。',
-        href: 'http://127.0.0.1:7001/public/uploads/b5274a0ad5ea43a9c020641dcac4519d.ppt'
+        description: ' 决策树随机森林 ',
+        href: 'http://127.0.0.1:7001/public/uploads/cd370f0695f7e17a44b3de8317fae6ef.zip'
     });
     listData.push({
        href: 'http://127.0.0.1:7001/public/uploads/395a66d5ee605462f9f02c05d19f509e.zip',

@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout, Button, Avatar ,List,Icon,} from 'antd';
 import { Pagination } from 'antd';
 import { isAbsolute } from 'path';
-import avaterppt from '../assets/ppt.jpg';
+import avaterppt from '../assets/word.jpg';
 import styles from './courseware.css';
 import files from '../models/files';
 import { connect } from 'dva';
