@@ -32,6 +32,13 @@ class PDFfile extends React.Component{
           className={styles.list}
           header={<h2>文档资料</h2>}
           dataSource={list}
+          pagination={{
+            onChange: (page) => {
+            console.log(page);
+            },
+            //十个为一页
+            pageSize: 10,
+          }}
           renderItem={item => (
           <List.Item  > 
             {/* actions={[<a>下载</a>]} */}

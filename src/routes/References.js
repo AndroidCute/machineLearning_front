@@ -6,7 +6,7 @@ import { isAbsolute } from 'path';
 
 class References extends React.Component{
 
-     onChange = (pageNumber) => {
+    onChange = (pageNumber) => {
         console.log('Page: ', pageNumber);
       }
       

@@ -29,6 +29,15 @@ class Netfile extends React.Component{
     return(
         <div >   
         <List
+          itemLayout="vertical"
+          size="large"
+          pagination={{
+              onChange: (page) => {
+              console.log(page);
+              },
+              //十个为一页
+              pageSize: 10,
+          }}
           className={styles.list}
           header={<h2>机器学习网页资料</h2>}
           dataSource={list}

@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { List, } from 'antd';
-import avaterppt from '../assets/ppt.jpg';
 
 
 class Codeexample extends React.Component{
