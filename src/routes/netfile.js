@@ -35,8 +35,8 @@ class Netfile extends React.Component{
               onChange: (page) => {
               console.log(page);
               },
-              //十个为一页
-              pageSize: 10,
+              //7个为一页
+              pageSize: 7,
           }}
           className={styles.list}
           header={<h2>机器学习网页资料</h2>}

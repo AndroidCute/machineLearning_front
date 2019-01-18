@@ -19,6 +19,7 @@ import Netfile from '../routes/netfile';
 import HtmlPage from '../routes/HtmlPage';
 import PDFfile from '../routes/PDFfile';
 import Datanew from '../routes/Data_new';
+import Learnware from '../routes/Learningware';
 
 const MenuItemGroup = Menu.ItemGroup;
 const { SubMenu } = Menu;
@@ -59,12 +60,18 @@ class BasicLayout extends React.Component {
               defaultSelectedKeys={['1']}
               style={{ height: '100%', borderRight: 0 }}
             >
-              <Menu.Item key="course">
-                <Link to="/Layout/Courseware">
-                  <Icon type="file-ppt" />
+              <SubMenu key="course" title={<span><Icon type="file-ppt" /><span>课件</span></span>}>
+                <Menu.Item key="teach">
+                  <Link to="/Layout/Courseware">
                   教学课件
-                </Link>
-              </Menu.Item>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="learn">
+                  <Link to="/Layout/Learnware">
+                  学习课件
+                  </Link>
+                </Menu.Item>
+              </SubMenu>
               <Menu.Item key="video">
                 <Link to="/Layout/Movie">
                   <Icon type="video-camera" theme="outlined" />
@@ -129,6 +136,7 @@ class BasicLayout extends React.Component {
               <Route exact path="/Layout/HtmlPage" component={HtmlPage}  />
               <Route exact path="/Layout/PDFfile" component={PDFfile} />
               <Route exact path="/Layout/Datanew" component={Datanew} />
+              <Route exact path="/Layout/Learnware" component={Learnware} />
 
               {/* <Route exact path="/Layout/Bar" component={BarChart} /> */}
               <Redirect from="*" to='/Layout/Home' />

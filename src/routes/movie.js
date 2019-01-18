@@ -34,8 +34,8 @@ class movie extends React.Component{
             onChange: (page) => {
             console.log(page);
             },
-            //十个为一页
-            pageSize: 10,
+            //7个为一页
+            pageSize: 7,
           }}
           renderItem={item => (
           <List.Item  > 

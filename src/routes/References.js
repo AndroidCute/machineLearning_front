@@ -59,8 +59,8 @@ class References extends React.Component{
                         onChange: (page) => {
                         console.log(page);
                         },
-                        //五本书为一页
-                        pageSize: 5,
+                        //4本书为一页
+                        pageSize: 4,
                     }}
                     dataSource={listData}
                    // footer={<div><b>ant design</b> footer part</div>}
